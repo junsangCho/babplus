@@ -55,8 +55,13 @@ public class ServletLoggingFilter extends OncePerRequestFilter {
 
             try {
                 if (Objects.equals(request.getMethod(), "POST")) {
-                    Map<String, Object> inputMap = new ObjectMapper().readValue(wrappedRequest.getInputStream(), Map.class);
-                    log.info("요청 정보: " + inputMap);
+                    String contentType = request.getContentType();
+                    if(contentType != null && contentType.startsWith("application/json")){
+                        Map<String, Object> inputMap = new ObjectMapper().readValue(wrappedRequest.getInputStream(), Map.class);
+                        log.info("요청 정보: " + inputMap);
+                    }else{
+                        log.warn("JSON이 아닌 다른 Content-Type: " + contentType);
+                    }
                 } else {
                     log.info("요청 정보: " + request.getQueryString());
                 }

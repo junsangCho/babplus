@@ -69,13 +69,6 @@ public class WebSecurityConfig {
                     ).permitAll()
                     .requestMatchers(
                         "/auth/**",
-                        "/code/ORG_CODE",
-                        "/admin/join/**",
-                        "/eai/**",
-                        "/org/**",
-                        "/file/**",
-                        "/fep/**",
-                        "/m/**",
                         "/"
                     ).permitAll()
                     .anyRequest().authenticated()

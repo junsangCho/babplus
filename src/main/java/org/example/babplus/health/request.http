@@ -1,3 +1,25 @@
+@user = Bearer eyJhbGciOiJIUzUxMiJ9.eyJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiYWRtaW4ifV0sInVzZXJuYW1lIjoid25zdGtkZGw5MCIsImlhdCI6MTc1NDM3NjQ2NCwiZXhwIjoxNzkwMzc2NDY0fQ.hv3jE18ENGNGDfn1A5_nH5TdNsBw1UfG495LINCQF1p119IICSTFq2jGKPdGysTVKoe4F_Hxr9xHRhmKrW78ng
+
 
 GET http://localhost:8082/
 Content-Type: application/json
+
+###
+POST http://localhost:8082/auth/login
+Content-Type: application/json
+
+{
+  "id": "wnstkddl90",
+  "password": "Vlzkcb_!@12"
+}
+
+
+###
+POST http://localhost:8082/auth/join
+Content-Type: application/json
+
+{
+  "id": "wnstkddl90",
+  "name": "조준상",
+  "password": "Vlzkcb_!@12"
+}
