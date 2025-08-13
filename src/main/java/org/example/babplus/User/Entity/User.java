@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.example.babplus.common.entity.BaseTimeEntity;
 import org.hibernate.annotations.DynamicInsert;
 
 @Entity
@@ -14,14 +15,10 @@ import org.hibernate.annotations.DynamicInsert;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class User {
+public class User extends BaseTimeEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
-
-    @Column(name = "login_id", nullable = false, unique = true)
-    private String loginId;
+    private String id;
 
     @Column(name = "password", nullable = false)
     private String password;
@@ -34,6 +31,4 @@ public class User {
 
     @Column(name = "enable", nullable = false)
     private boolean enable;
-
-
 }

@@ -10,7 +10,7 @@ import org.example.babplus.auth.dto.JoinRequest;
 @Getter
 public class JoinVO {
 
-    private final String loginId;
+    private final String id;
     private final String password;
     private final String name;
     private final String role;
@@ -20,7 +20,7 @@ public class JoinVO {
     public User toEntity(String encodedPassword){
 
         return User.builder()
-                .loginId(this.loginId)
+                .id(this.id)
                 .password(encodedPassword)
                 .name(this.name)
                 .role(this.role)
@@ -30,7 +30,7 @@ public class JoinVO {
 
     public static JoinVO of(JoinRequest request) {
         return JoinVO.builder()
-                .loginId(request.getId())
+                .id(request.getId())
                 .password(request.getPassword())
                 .name(request.getName())
                 .role("admin")

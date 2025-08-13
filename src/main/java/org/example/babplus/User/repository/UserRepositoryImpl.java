@@ -20,13 +20,13 @@ public class UserRepositoryImpl implements UserRepositoryCustom{
     @Override
     public Optional<UserInfo> getUser(String userName) {
         return Optional.ofNullable(jpaQueryFactory.select(Projections.fields(UserInfo.class,
-                        user.loginId,
+                        user.id,
                         user.password,
                         user.enable,
                         user.role
                         ))
                 .from(user)
-                .where(user.loginId.eq(userName))
+                .where(user.id.eq(userName))
                 .fetchOne());
     }
 

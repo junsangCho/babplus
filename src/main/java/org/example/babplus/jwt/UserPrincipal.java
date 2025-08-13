@@ -8,6 +8,6 @@ import java.util.List;
 
 public class UserPrincipal extends User {
     public UserPrincipal(UserInfo user) {
-        super(user.getLoginId(), user.getPassword(), user.isEnable(), true, true, true, List.of(new SimpleGrantedAuthority(user.getRole())));
+        super(user.getId(), user.getPassword(), user.isEnable(), true, true, true, List.of(new SimpleGrantedAuthority(user.getRole())));
     }
 }

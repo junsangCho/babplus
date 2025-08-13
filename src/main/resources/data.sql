@@ -1,1 +1,1 @@
-insert into users (login_id, password, name, role, enable) values('wnstkddl90','$2a$10$h2uH7sk60HAldUEvJ/0YW.Ki4XxMjpM5wARtphaA/R.UauXu3uUc2','조준상','admin',1);
+insert into users (id, password, name, role, enable) values('wnstkddl90','$2a$10$h2uH7sk60HAldUEvJ/0YW.Ki4XxMjpM5wARtphaA/R.UauXu3uUc2','조준상','admin',1);
