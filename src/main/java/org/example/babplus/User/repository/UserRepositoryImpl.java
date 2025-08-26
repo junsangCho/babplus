@@ -26,7 +26,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom{
                         user.role
                         ))
                 .from(user)
-                .where(user.id.eq(userName))
+                .where(nullSafeBooleanBuilder(()->user.id.eq(userName)))
                 .fetchOne());
     }
 

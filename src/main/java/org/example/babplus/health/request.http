@@ -23,3 +23,36 @@ Content-Type: application/json
   "name": "조준상",
   "password": "Vlzkcb_!@12"
 }
+
+###
+GET http://localhost:8082/store
+Content-Type: application/json
+Authorization: {{user}}}
+
+###
+GET http://localhost:8082/store/2
+Content-Type: application/json
+Authorization: {{user}}}
+
+###
+POST http://localhost:8082/store
+Content-Type: application/json
+Authorization: {{user}}}
+
+{
+  "name": "상봉지점",
+  "address": "중랑구 상봉동",
+  "hotline": "02-3491-3433"
+}
+
+###
+PATCH http://localhost:8082/store/1
+Content-Type: application/json
+Authorization: {{user}}}
+
+{
+  "name": "상봉",
+  "address": "중랑구",
+  "hotline": "02-3491-3431",
+  "enable": true
+}

@@ -9,7 +9,7 @@ public enum ErrorCode {
     COMMON_SYSTEM_ERROR("일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요."), // 장애 상황
     COMMON_INVALID_PARAMETER("요청한 값이 올바르지 않습니다."),
     COMMON_BAD_CREDENTIAL("자격증명에 실패하였습니다"),
-    COMMON_ENTITY_NOT_FOUND("조회결과를 찾을 수 없습니다."),
+    COMMON_NO_SUCH_ELEMENT("조회결과를 찾을 수 없습니다."),
     COMMON_ILLEGAL_STATUS("잘못된 상태값입니다."),
     COMMON_DUPLICATE_ENTRY("이미 존재하는 데이터 입니다."),
     COMMON_ACCESS_DENIED("접근이 거부되었습니다."),

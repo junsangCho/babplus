@@ -52,7 +52,7 @@ public class JwtTokenProvider {
 
     // 토큰에서 사용자 이름 추출
     public String getUsernameFromToken(String token) {
-        return extractAllClaims(token).getSubject();
+        return extractAllClaims(token).get("username").toString();
     }
 
     // 토큰의 유효성을 검사

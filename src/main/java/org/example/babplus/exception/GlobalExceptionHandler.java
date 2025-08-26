@@ -1,6 +1,5 @@
 package org.example.babplus.exception;
 
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.UnexpectedTypeException;
 import lombok.extern.slf4j.Slf4j;
 import org.example.babplus.common.dto.response.CommonResponse;
@@ -16,6 +15,8 @@ import org.springframework.validation.BindException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.NoSuchElementException;
 
 import static org.example.babplus.common.dto.response.ErrorCode.*;
 
@@ -39,12 +40,12 @@ public class GlobalExceptionHandler {
         return CommonResponse.fail(ErrorCode.COMMON_SYSTEM_ERROR);
     }
 
-    @ExceptionHandler(EntityNotFoundException.class)
+    @ExceptionHandler(NoSuchElementException.class)
     @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
-    public CommonResponse<?> EntityNotFoundException(EntityNotFoundException e) {
+    public CommonResponse<?> NoSuchElementException(NoSuchElementException e) {
         log.warn(e.getMessage());
-        return CommonResponse.fail(COMMON_ENTITY_NOT_FOUND);
+        return CommonResponse.fail(COMMON_NO_SUCH_ELEMENT);
     }
 
     @ExceptionHandler({DataIntegrityViolationException.class, UnexpectedTypeException.class, BindException.class})
