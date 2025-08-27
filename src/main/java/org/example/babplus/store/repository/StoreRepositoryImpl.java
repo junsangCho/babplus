@@ -5,9 +5,9 @@ import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
-import org.example.babplus.User.projection.UserInfo;
 import org.example.babplus.store.dto.request.GetStoresRequest;
 import org.example.babplus.store.projection.StoreInfo;
+import org.example.babplus.user.projection.UserInfo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -15,8 +15,8 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 import java.util.function.Supplier;
 
-import static org.example.babplus.User.Entity.QUser.user;
 import static org.example.babplus.store.entity.QStore.store;
+import static org.example.babplus.user.entity.QUser.user;
 
 
 @RequiredArgsConstructor

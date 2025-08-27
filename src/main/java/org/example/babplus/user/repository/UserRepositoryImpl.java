@@ -1,16 +1,16 @@
-package org.example.babplus.User.repository;
+package org.example.babplus.user.repository;
 
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
-import org.example.babplus.User.projection.UserInfo;
+import org.example.babplus.user.projection.UserInfo;
 
 import java.util.Optional;
 import java.util.function.Supplier;
 
-import static org.example.babplus.User.Entity.QUser.user;
+import static org.example.babplus.user.entity.QUser.user;
 
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepositoryCustom{

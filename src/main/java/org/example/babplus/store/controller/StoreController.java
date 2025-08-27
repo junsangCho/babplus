@@ -19,7 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/store")
+@RequestMapping("/stores")
 @RequiredArgsConstructor
 public class StoreController {
 
@@ -54,8 +54,8 @@ public class StoreController {
     @PatchMapping("/{storeId}")
     @Operation(summary = "매장 업데이트", description = "매장 업데이트")
     public CommonResponse<?> patch(@PathVariable Long storeId, @RequestBody PatchStoreRequest request){
-        var paramVO = PatchVO.of(request);
-        var storeInfo = storeService.patch(paramVO, storeId);
+        var paramVO = PatchVO.of(request, storeId);
+        var storeInfo = storeService.patch(paramVO);
         var response = PatchStoreResponse.of(storeInfo);
 
         return CommonResponse.success(response);

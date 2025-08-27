@@ -8,14 +8,15 @@ import org.example.babplus.store.dto.request.PatchStoreRequest;
 @Builder
 public class PatchVO {
 
-    private final String userId;
+    private final Long storeId;
     private final String name;
     private final String address;
     private final String hotline;
     private final Boolean enable;
 
-    public static PatchVO of(PatchStoreRequest request){
+    public static PatchVO of(PatchStoreRequest request, Long storeId) {
         return PatchVO.builder()
+                .storeId(storeId)
                 .address(request.getAddress())
                 .name(request.getName())
                 .hotline(request.getHotline())

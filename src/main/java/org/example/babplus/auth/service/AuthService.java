@@ -1,9 +1,9 @@
 package org.example.babplus.auth.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.babplus.User.repository.UserRepository;
 import org.example.babplus.auth.dto.LoginRequest;
 import org.example.babplus.auth.vo.JoinVO;
+import org.example.babplus.user.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

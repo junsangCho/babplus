@@ -3,8 +3,8 @@ package org.example.babplus.store.projection;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.example.babplus.User.projection.UserInfo;
 import org.example.babplus.store.entity.Store;
+import org.example.babplus.user.projection.UserInfo;
 
 import java.time.LocalDateTime;
 

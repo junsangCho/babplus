@@ -2,8 +2,8 @@ package org.example.babplus.auth.vo;
 
 import lombok.Builder;
 import lombok.Getter;
-import org.example.babplus.User.Entity.User;
 import org.example.babplus.auth.dto.JoinRequest;
+import org.example.babplus.user.entity.User;
 
 
 @Builder

@@ -25,17 +25,17 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8082/store
+GET http://localhost:8082/stores
 Content-Type: application/json
 Authorization: {{user}}}
 
 ###
-GET http://localhost:8082/store/2
+GET http://localhost:8082/stores/2
 Content-Type: application/json
 Authorization: {{user}}}
 
 ###
-POST http://localhost:8082/store
+POST http://localhost:8082/stores
 Content-Type: application/json
 Authorization: {{user}}}
 
@@ -46,7 +46,7 @@ Authorization: {{user}}}
 }
 
 ###
-PATCH http://localhost:8082/store/1
+PATCH http://localhost:8082/stores/1
 Content-Type: application/json
 Authorization: {{user}}}
 
@@ -55,4 +55,45 @@ Authorization: {{user}}}
   "address": "중랑구",
   "hotline": "02-3491-3431",
   "enable": true
+}
+
+
+###
+GET http://localhost:8082/stores/2/menus/1
+Content-Type: application/json
+Authorization: {{user}}}
+
+###
+POST http://localhost:8082/stores/2/menus
+Content-Type: application/json
+Authorization: {{user}}}
+
+{
+  "menuDate": "2025-08-27",
+  "mealType": "BREAKFAST",
+  "menuItemNames": [
+    "깍두기",
+    "소고기무국",
+    "계란장조림",
+    "멸치볶음",
+    "오징어젓갈"
+  ]
+
+}
+
+###
+PATCH http://localhost:8082/stores/1/menus/1
+Content-Type: application/json
+Authorization: {{user}}}
+
+{
+  "menuDate": "2025-08-28",
+  "mealType": "LUNCH",
+  "menuItemNames": [
+    "배추김치",
+    "육계장",
+    "불고기",
+    "고등어조림",
+    "어묵볶음"
+  ]
 }

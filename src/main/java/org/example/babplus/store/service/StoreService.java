@@ -1,13 +1,13 @@
 package org.example.babplus.store.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.babplus.User.repository.UserRepository;
 import org.example.babplus.store.dto.request.GetStoresRequest;
 import org.example.babplus.store.factory.StoreFactory;
 import org.example.babplus.store.projection.StoreInfo;
 import org.example.babplus.store.repository.StoreRepository;
 import org.example.babplus.store.vo.PatchVO;
 import org.example.babplus.store.vo.RegisterVO;
+import org.example.babplus.user.repository.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -38,8 +38,8 @@ public class StoreService {
     }
 
     @Transactional
-    public StoreInfo patch(PatchVO patchVO, Long storeId){
-        var store = storeRepository.findById(storeId).orElseThrow();
+    public StoreInfo patch(PatchVO patchVO){
+        var store = storeRepository.findById(patchVO.getStoreId()).orElseThrow();
         store.patch(patchVO);
 
         return new StoreInfo(store);

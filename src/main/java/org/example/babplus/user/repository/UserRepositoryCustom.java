@@ -1,6 +1,6 @@
-package org.example.babplus.User.repository;
+package org.example.babplus.user.repository;
 
-import org.example.babplus.User.projection.UserInfo;
+import org.example.babplus.user.projection.UserInfo;
 
 import java.util.Optional;
 

@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.example.babplus.User.Entity.User;
 import org.example.babplus.common.entity.BaseTimeEntity;
 import org.example.babplus.store.vo.PatchVO;
+import org.example.babplus.user.entity.User;
 import org.hibernate.annotations.DynamicInsert;
 
 @Entity

@@ -1,9 +1,9 @@
-package org.example.babplus.User.projection;
+package org.example.babplus.user.projection;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.example.babplus.User.Entity.User;
+import org.example.babplus.user.entity.User;
 
 import java.time.LocalDateTime;
 

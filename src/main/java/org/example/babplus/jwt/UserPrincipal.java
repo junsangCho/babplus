@@ -1,6 +1,6 @@
 package org.example.babplus.jwt;
 
-import org.example.babplus.User.projection.UserInfo;
+import org.example.babplus.user.projection.UserInfo;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 

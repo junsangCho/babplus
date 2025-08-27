@@ -1,8 +1,8 @@
 package org.example.babplus.store.factory;
 
-import org.example.babplus.User.Entity.User;
 import org.example.babplus.store.entity.Store;
 import org.example.babplus.store.vo.RegisterVO;
+import org.example.babplus.user.entity.User;
 
 public class StoreFactory {
 
