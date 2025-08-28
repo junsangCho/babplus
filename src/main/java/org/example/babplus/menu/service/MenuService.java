@@ -18,9 +18,8 @@ public class MenuService {
     private final StoreRepository storeRepository;
 
 
-    public MenuInfo getMenu(Long menuId) {
-        return menuRepository.findById(menuId)
-                .map(MenuInfo::new).orElseThrow();
+    public MenuInfo getMenu(Long menuId, Long storeId) {
+        return menuRepository.getMenu(menuId, storeId).orElseThrow();
     }
 
     @Transactional
@@ -33,7 +32,7 @@ public class MenuService {
 
     @Transactional
     public MenuInfo patch(PatchVO patchVO){
-        var menu = menuRepository.findById(patchVO.getMenuId()).orElseThrow();
+        var menu = menuRepository.findByIdAndStoreId(patchVO.getMenuId(), patchVO.getStoreId()).orElseThrow();
         menu.patch(patchVO);
 
         return new MenuInfo(menu);

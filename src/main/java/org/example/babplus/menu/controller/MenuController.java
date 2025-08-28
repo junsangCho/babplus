@@ -21,8 +21,8 @@ public class MenuController {
 
     @GetMapping("/{menuId}")
     @Operation(summary = "식단표 단일 조회", description = "식단표 단일 조회")
-    public CommonResponse<?> getMenu(@PathVariable Long menuId){
-        var menuInfo = menuService.getMenu(menuId);
+    public CommonResponse<?> getMenu(@PathVariable Long menuId, @PathVariable Long storeId) {
+        var menuInfo = menuService.getMenu(menuId, storeId);
         var response = GetMenuResponse.of(menuInfo);
 
         return CommonResponse.success(response);
@@ -39,8 +39,8 @@ public class MenuController {
 
     @PatchMapping("/{menuId}")
     @Operation(summary = "식단표 업데이트", description = "식단표 업데이트")
-    public CommonResponse<?> patch(@PathVariable Long menuId, @RequestBody PatchMenuRequest request){
-        var paramVO = PatchVO.of(request, menuId);
+    public CommonResponse<?> patch(@PathVariable Long menuId,@PathVariable Long storeId, @RequestBody PatchMenuRequest request){
+        var paramVO = PatchVO.of(request, menuId, storeId);
         var menuInfo = menuService.patch(paramVO);
         var response = PatchMenuResponse.of(menuInfo);
 

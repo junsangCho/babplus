@@ -59,7 +59,7 @@ Authorization: {{user}}}
 
 
 ###
-GET http://localhost:8082/stores/2/menus/1
+GET http://localhost:8082/stores/1/menus/1
 Content-Type: application/json
 Authorization: {{user}}}
 

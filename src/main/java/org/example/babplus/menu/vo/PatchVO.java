@@ -13,13 +13,15 @@ import java.util.List;
 public class PatchVO {
 
     private final Long menuId;
+    private final Long storeId;
     private final LocalDate menuDate;
     private final MealType mealType;
     private final List<String> menuItemNames;
 
-    public static PatchVO of(PatchMenuRequest request, Long menuId) {
+    public static PatchVO of(PatchMenuRequest request, Long menuId, Long storeId) {
         return PatchVO.builder()
                 .menuId(menuId)
+                .storeId(storeId)
                 .menuDate(request.getMenuDate())
                 .mealType(request.getMealType())
                 .menuItemNames(request.getMenuItemNames())
