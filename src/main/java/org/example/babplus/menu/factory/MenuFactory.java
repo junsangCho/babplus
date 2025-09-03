@@ -1,8 +1,8 @@
 package org.example.babplus.menu.factory;
 
 import org.example.babplus.menu.entity.Menu;
+import org.example.babplus.menu.entity.MenuItem;
 import org.example.babplus.menu.vo.RegisterVO;
-import org.example.babplus.menuItem.entity.MenuItem;
 import org.example.babplus.store.entity.Store;
 
 public class MenuFactory {

@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.example.babplus.menu.entity.Menu;
 import org.example.babplus.menu.enums.MealType;
-import org.example.babplus.menuItem.projection.MenuItemInfo;
 import org.example.babplus.store.projection.StoreInfo;
 
 import java.time.LocalDate;

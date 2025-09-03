@@ -106,6 +106,14 @@ public class GlobalExceptionHandler {
         return CommonResponse.fail(BATCH_SCHEDULER_FAILED);
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseBody
+    public CommonResponse<?> IllegalArgumentException(IllegalArgumentException e) {
+        log.warn(e.getMessage());
+        return CommonResponse.fail(COMMON_DUPLICATE_ENTRY);
+    }
+
 
     private void printError(Exception e){
         log.error("Exception [Exception Name]: {}", e.getClass().getName());

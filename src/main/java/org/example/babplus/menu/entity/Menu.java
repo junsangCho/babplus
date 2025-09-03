@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import org.example.babplus.common.entity.BaseTimeEntity;
 import org.example.babplus.menu.enums.MealType;
 import org.example.babplus.menu.vo.PatchVO;
-import org.example.babplus.menuItem.entity.MenuItem;
 import org.example.babplus.store.entity.Store;
 import org.hibernate.annotations.DynamicInsert;
 

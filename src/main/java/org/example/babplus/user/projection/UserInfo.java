@@ -15,6 +15,7 @@ public class UserInfo {
     private String password;
     private String name;
     private String role;
+    private String customerKey;
     private boolean enable;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
@@ -24,6 +25,7 @@ public class UserInfo {
         this.password = user.getPassword();
         this.name = user.getName();
         this.role = user.getRole();
+        this.customerKey = user.getCustomerKey();
         this.enable = user.isEnable();
         this.createdDate = user.getCreatedDate();
         this.updatedDate = user.getUpdatedDate();

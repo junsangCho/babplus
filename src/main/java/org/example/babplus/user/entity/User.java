@@ -1,9 +1,7 @@
 package org.example.babplus.user.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.github.f4b6a3.ulid.UlidCreator;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -32,6 +30,16 @@ public class User extends BaseTimeEntity {
     @Column(name = "role", nullable = false)
     private String role;
 
+    @Column(name = "customer_key ", unique = true, nullable = false, updatable = false, length = 26)
+    private String customerKey ;
+
     @Column(name = "enable", nullable = false)
     private boolean enable;
+
+    @PrePersist
+    public void generateCustomerKey() {
+        if (this.customerKey == null) {
+            this.customerKey = UlidCreator.getUlid().toString();
+        }
+    }
 }

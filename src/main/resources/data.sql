@@ -1,6 +1,6 @@
 -- USERS
-insert into users (id, password, name, role, enable, created_date, updated_date) values('wnstkddl90','$2a$10$h2uH7sk60HAldUEvJ/0YW.Ki4XxMjpM5wARtphaA/R.UauXu3uUc2','조준상','admin',1,'2025-08-18 13:07:53', '2025-08-18 13:07:59');
-insert into users (id, password, name, role, enable, created_date, updated_date) values('hanb123','$2a$10$h2uH7sk60HAldUEvJ/0YW.Ki4XxMjpM5wARtphaA/R.UauXu3uUc2','진한별','admin',1,'2025-08-18 13:08:57', '2025-08-18 13:09:01');
+insert into users (id, password, name, role, customer_key, enable, created_date, updated_date) values('wnstkddl90','$2a$10$h2uH7sk60HAldUEvJ/0YW.Ki4XxMjpM5wARtphaA/R.UauXu3uUc2','조준상','admin','01J7Z3Z3J3S4F9V4M7XQ1D8WAB',1,'2025-08-18 13:07:53', '2025-08-18 13:07:59');
+insert into users (id, password, name, role, customer_key, enable, created_date, updated_date) values('hanb123','$2a$10$h2uH7sk60HAldUEvJ/0YW.Ki4XxMjpM5wARtphaA/R.UauXu3uUc2','진한별','admin','01J8A7Z1VJH0F8KX8M6H1N3R9P',1,'2025-08-18 13:08:57', '2025-08-18 13:09:01');
 
 
 -- STORE

@@ -1,9 +1,9 @@
-package org.example.babplus.menuItem.projection;
+package org.example.babplus.menu.projection;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.example.babplus.menuItem.entity.MenuItem;
+import org.example.babplus.menu.entity.MenuItem;
 
 import java.time.LocalDateTime;
 import java.util.List;

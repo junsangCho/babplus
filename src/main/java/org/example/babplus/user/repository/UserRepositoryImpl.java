@@ -22,8 +22,9 @@ public class UserRepositoryImpl implements UserRepositoryCustom{
         return Optional.ofNullable(jpaQueryFactory.select(Projections.fields(UserInfo.class,
                         user.id,
                         user.password,
-                        user.enable,
-                        user.role
+                        user.customerKey,
+                        user.role,
+                        user.enable
                         ))
                 .from(user)
                 .where(nullSafeBooleanBuilder(()->user.id.eq(userName)))

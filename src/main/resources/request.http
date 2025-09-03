@@ -15,7 +15,7 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:8082/auth/join
+POST http://localhost:8082/users/join
 Content-Type: application/json
 
 {

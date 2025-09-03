@@ -69,6 +69,7 @@ public class WebSecurityConfig {
                     ).permitAll()
                     .requestMatchers(
                         "/auth/**",
+                        "/users/join",
                         "/"
                     ).permitAll()
                     .anyRequest().authenticated()

@@ -1,4 +1,4 @@
-package org.example.babplus.menuItem.entity;
+package org.example.babplus.menu.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.babplus.common.entity.BaseTimeEntity;
-import org.example.babplus.menu.entity.Menu;
 import org.hibernate.annotations.DynamicInsert;
 
 @Entity

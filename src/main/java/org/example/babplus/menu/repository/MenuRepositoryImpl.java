@@ -6,7 +6,7 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.example.babplus.menu.projection.MenuInfo;
-import org.example.babplus.menuItem.projection.MenuItemInfo;
+import org.example.babplus.menu.projection.MenuItemInfo;
 import org.example.babplus.store.projection.StoreInfo;
 
 import java.util.Optional;
@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 import static com.querydsl.core.group.GroupBy.groupBy;
 import static com.querydsl.core.group.GroupBy.list;
 import static org.example.babplus.menu.entity.QMenu.menu;
-import static org.example.babplus.menuItem.entity.QMenuItem.menuItem;
+import static org.example.babplus.menu.entity.QMenuItem.menuItem;
 
 
 @RequiredArgsConstructor

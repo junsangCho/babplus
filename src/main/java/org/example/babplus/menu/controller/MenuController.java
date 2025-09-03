@@ -20,7 +20,7 @@ public class MenuController {
     private final MenuService menuService;
 
     @GetMapping("/{menuId}")
-    @Operation(summary = "식단표 단일 조회", description = "식단표 단일 조회")
+    @Operation(summary = "식사메뉴 단일 조회", description = "식사메뉴 단일 조회")
     public CommonResponse<?> getMenu(@PathVariable Long menuId, @PathVariable Long storeId) {
         var menuInfo = menuService.getMenu(menuId, storeId);
         var response = GetMenuResponse.of(menuInfo);
@@ -29,7 +29,7 @@ public class MenuController {
     }
 
     @PostMapping()
-    @Operation(summary = "식단표 등록", description = "식단표 등록")
+    @Operation(summary = "식사메뉴 등록", description = "식사메뉴 등록")
     public CommonResponse<?> register(@PathVariable Long storeId, @RequestBody RegisterMenuRequest request){
         var paramVO = RegisterVO.of(request,storeId);
         menuService.register(paramVO);
@@ -38,7 +38,7 @@ public class MenuController {
     }
 
     @PatchMapping("/{menuId}")
-    @Operation(summary = "식단표 업데이트", description = "식단표 업데이트")
+    @Operation(summary = "식사메뉴 업데이트", description = "식사메뉴 업데이트")
     public CommonResponse<?> patch(@PathVariable Long menuId,@PathVariable Long storeId, @RequestBody PatchMenuRequest request){
         var paramVO = PatchVO.of(request, menuId, storeId);
         var menuInfo = menuService.patch(paramVO);
