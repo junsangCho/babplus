@@ -1,9 +1,10 @@
 package org.example.babplus.user.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.babplus.auth.vo.JoinVO;
+import org.example.babplus.user.factory.UserFactory;
 import org.example.babplus.user.projection.UserInfo;
 import org.example.babplus.user.repository.UserRepository;
+import org.example.babplus.user.vo.JoinVO;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class UserService {
         String encodedPassword = passwordEncoder.encode(request.getPassword());
         userExists(request.getId());
 
-        userRepository.save(request.toEntity(encodedPassword));
+        userRepository.save(UserFactory.create(request, encodedPassword));
     }
 
     public UserInfo getUser(String userId){

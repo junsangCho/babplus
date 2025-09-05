@@ -22,7 +22,6 @@ public class MenuItem extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "menu_id")
     private Menu menu;
 
     @Column(name = "name", nullable = false)

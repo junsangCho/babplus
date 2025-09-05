@@ -19,7 +19,7 @@ POST http://localhost:8082/users/join
 Content-Type: application/json
 
 {
-  "id": "wnstkddl90",
+  "id": "wnstkddl90d",
   "name": "조준상",
   "password": "Vlzkcb_!@12"
 }

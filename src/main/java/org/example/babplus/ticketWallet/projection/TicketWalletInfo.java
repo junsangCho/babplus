@@ -1,0 +1,27 @@
+package org.example.babplus.ticketWallet.projection;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.example.babplus.ticketWallet.entity.TicketWallet;
+
+import java.time.LocalDateTime;
+
+@Getter
+@ToString
+@NoArgsConstructor
+public class TicketWalletInfo {
+    private Long id;
+    private String userId;
+    private Integer balance;
+    private LocalDateTime createdDate;
+    private LocalDateTime updatedDate;
+
+    public TicketWalletInfo(TicketWallet ticketWallet){
+        this.id = ticketWallet.getId();
+        this.userId = ticketWallet.getUser() == null ? null : ticketWallet.getUserId();
+        this.balance = ticketWallet.getBalance();
+        this.createdDate = ticketWallet.getCreatedDate();
+        this.updatedDate = ticketWallet.getUpdatedDate();
+    }
+}

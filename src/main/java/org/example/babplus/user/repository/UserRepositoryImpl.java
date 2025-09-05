@@ -5,6 +5,7 @@ import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
+import org.example.babplus.ticketWallet.projection.TicketWalletInfo;
 import org.example.babplus.user.projection.UserInfo;
 
 import java.util.Optional;
@@ -24,9 +25,14 @@ public class UserRepositoryImpl implements UserRepositoryCustom{
                         user.password,
                         user.customerKey,
                         user.role,
+                        Projections.fields(TicketWalletInfo.class,
+                            user.ticketWallet.id,
+                            user.ticketWallet.balance
+                        ).as("ticketWallet"),
                         user.enable
                         ))
                 .from(user)
+                .join(user.ticketWallet)
                 .where(nullSafeBooleanBuilder(()->user.id.eq(userName)))
                 .fetchOne());
     }
