@@ -7,7 +7,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.babplus.common.entity.BaseTimeEntity;
-import org.example.babplus.ticketWallet.entity.TicketWallet;
 import org.hibernate.annotations.DynamicInsert;
 
 @Entity
@@ -31,11 +30,8 @@ public class User extends BaseTimeEntity {
     @Column(name = "role", nullable = false)
     private String role;
 
-    @Column(name = "customer_key ", unique = true, nullable = false, updatable = false, length = 26)
+    @Column(name = "customer_key", unique = true, nullable = false, updatable = false, length = 26)
     private String customerKey ;
-
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private TicketWallet ticketWallet;
 
     @Column(name = "enable", nullable = false)
     private boolean enable;
@@ -46,9 +42,4 @@ public class User extends BaseTimeEntity {
             this.customerKey = UlidCreator.getUlid().toString();
         }
     }
-
-    public void assignWallet(TicketWallet wallet) {
-        this.ticketWallet = wallet;
-    }
-
 }

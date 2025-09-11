@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.babplus.common.entity.BaseTimeEntity;
 import org.example.babplus.user.entity.User;
+import org.hibernate.annotations.Comment;
 import org.hibernate.annotations.DynamicInsert;
 
 import java.math.BigDecimal;
@@ -27,6 +28,10 @@ public class Payment extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
+
+    @Comment("비정규화된 컬럼: User.customerKey 복제 저장 (이력 조회 및 웹훅 대응)")
+    @Column(name = "customer_key", nullable = false)
+    private String customerKey;
 
     @Column(name = "order_id", nullable = false)
     private String orderId;

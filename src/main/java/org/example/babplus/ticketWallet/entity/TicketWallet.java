@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.babplus.common.entity.BaseTimeEntity;
+import org.example.babplus.payment.entity.Payment;
 import org.example.babplus.user.entity.User;
 import org.hibernate.annotations.DynamicInsert;
 
@@ -22,14 +23,25 @@ public class TicketWallet extends BaseTimeEntity {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false, unique = true)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name = "balance")
-    private Integer balance;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "payment_id", nullable = false)
+    private Payment payment;
+
+    @Column(name = "total_amount")
+    private int totalAmount;
+
+    @Column(name = "used_amount")
+    private int usedAmount;
 
     public String getUserId(){
         return this.user.getId();
+    }
+
+    public Long getPaymentId(){
+        return this.payment.getId();
     }
 }

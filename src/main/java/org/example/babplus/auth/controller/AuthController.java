@@ -7,6 +7,7 @@ import org.example.babplus.auth.dto.LoginResponse;
 import org.example.babplus.auth.service.AuthService;
 import org.example.babplus.common.dto.response.CommonResponse;
 import org.example.babplus.jwt.JwtTokenProvider;
+import org.example.babplus.ticketWallet.service.TicketWalletService;
 import org.example.babplus.user.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +22,8 @@ public class AuthController {
 
     private final AuthService authService;
     private final UserService userService;
+    private final TicketWalletService ticketWalletService;
+
     private final JwtTokenProvider jwtTokenProvider;
 
     @PostMapping("/login")
@@ -29,7 +32,8 @@ public class AuthController {
         String token = jwtTokenProvider.generateToken(userDetails);
 
         var userInfo = userService.getUser(request.getId());
+        int ticketAmount = ticketWalletService.getTicketAmount(request.getId());
 
-        return CommonResponse.success(new LoginResponse(userInfo, token));
+        return CommonResponse.success(new LoginResponse(userInfo, token, ticketAmount));
     }
 }

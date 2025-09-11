@@ -13,14 +13,18 @@ import java.time.LocalDateTime;
 public class TicketWalletInfo {
     private Long id;
     private String userId;
-    private Integer balance;
+    private Long paymentId;
+    private int totalAmount;
+    private int usedAmount;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
 
     public TicketWalletInfo(TicketWallet ticketWallet){
         this.id = ticketWallet.getId();
         this.userId = ticketWallet.getUser() == null ? null : ticketWallet.getUserId();
-        this.balance = ticketWallet.getBalance();
+        this.paymentId = ticketWallet.getPayment() == null ? null : ticketWallet.getPaymentId();
+        this.totalAmount = ticketWallet.getTotalAmount();
+        this.usedAmount = ticketWallet.getUsedAmount();
         this.createdDate = ticketWallet.getCreatedDate();
         this.updatedDate = ticketWallet.getUpdatedDate();
     }
