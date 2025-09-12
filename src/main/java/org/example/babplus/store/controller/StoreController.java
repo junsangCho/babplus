@@ -33,9 +33,9 @@ public class StoreController {
         return CommonResponse.success(response);
     }
 
-    @GetMapping("/{storeId}")
+    @GetMapping("/{store-id}")
     @Operation(summary = "매장 단일 조회", description = "매장 단일 조회")
-    public CommonResponse<?> getStore(@PathVariable Long storeId){
+    public CommonResponse<?> getStore(@PathVariable("store-id") Long storeId){
         var storeInfo = storeService.getStore(storeId);
         var response = GetStoreResponse.of(storeInfo);
 
@@ -51,9 +51,9 @@ public class StoreController {
         return CommonResponse.success();
     }
 
-    @PatchMapping("/{storeId}")
+    @PatchMapping("/{store-id}")
     @Operation(summary = "매장 업데이트", description = "매장 업데이트")
-    public CommonResponse<?> patch(@PathVariable Long storeId, @RequestBody PatchStoreRequest request){
+    public CommonResponse<?> patch(@PathVariable("store-id") Long storeId, @RequestBody PatchStoreRequest request){
         var paramVO = PatchVO.of(request, storeId);
         var storeInfo = storeService.patch(paramVO);
         var response = PatchStoreResponse.of(storeInfo);

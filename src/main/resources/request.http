@@ -5,6 +5,8 @@ GET http://localhost:8082/
 Content-Type: application/json
 
 ###
+# AUTH
+###
 POST http://localhost:8082/auth/login
 Content-Type: application/json
 
@@ -13,7 +15,8 @@ Content-Type: application/json
   "password": "Vlzkcb_!@12"
 }
 
-
+###
+# USER
 ###
 POST http://localhost:8082/users/join
 Content-Type: application/json
@@ -24,6 +27,8 @@ Content-Type: application/json
   "password": "Vlzkcb_!@12"
 }
 
+###
+# STORE
 ###
 GET http://localhost:8082/stores
 Content-Type: application/json
@@ -57,7 +62,8 @@ Authorization: {{user}}}
   "enable": true
 }
 
-
+###
+# MENU
 ###
 GET http://localhost:8082/stores/1/menus/1
 Content-Type: application/json
@@ -96,4 +102,27 @@ Authorization: {{user}}}
     "고등어조림",
     "어묵볶음"
   ]
+}
+
+###
+# PRODUCT
+###
+GET http://localhost:8082/products
+Content-Type: application/json
+Authorization: {{user}}}
+
+###
+GET http://localhost:8082/products/1
+Content-Type: application/json
+Authorization: {{user}}}
+
+###
+POST http://localhost:8082/products
+Content-Type: application/json
+Authorization: {{user}}}
+
+{
+  "name": "10개",
+  "price": 54000,
+  "ticketAmount": 10
 }

@@ -31,5 +31,4 @@ public class Product extends BaseTimeEntity {
 
     @Column(name = "price", precision = 15, nullable = false)
     private BigDecimal price;
-
 }
