@@ -7,7 +7,7 @@ import org.example.babplus.auth.dto.LoginResponse;
 import org.example.babplus.auth.service.AuthService;
 import org.example.babplus.common.dto.response.CommonResponse;
 import org.example.babplus.jwt.JwtTokenProvider;
-import org.example.babplus.ticketWallet.service.TicketWalletService;
+import org.example.babplus.ticketWallet.application.service.TicketWalletService;
 import org.example.babplus.user.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

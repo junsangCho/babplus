@@ -126,3 +126,15 @@ Authorization: {{user}}}
   "price": 54000,
   "ticketAmount": 10
 }
+
+###
+# TICKET_WALLET
+###
+GET http://localhost:8082/ticket-wallet
+Content-Type: application/json
+Authorization: {{user}}}
+
+###
+GET http://localhost:8082/ticket-wallet/1
+Content-Type: application/json
+Authorization: {{user}}}
