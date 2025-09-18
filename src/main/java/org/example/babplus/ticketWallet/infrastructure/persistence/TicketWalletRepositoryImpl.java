@@ -5,7 +5,7 @@ import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
-import org.example.babplus.payment.projection.PaymentInfo;
+import org.example.babplus.payment.infrastructure.persistence.projection.PaymentInfo;
 import org.example.babplus.ticketWallet.application.repository.TicketWalletRepositoryCustom;
 import org.example.babplus.ticketWallet.infrastructure.persistence.projection.TicketWalletInfo;
 import org.springframework.stereotype.Repository;

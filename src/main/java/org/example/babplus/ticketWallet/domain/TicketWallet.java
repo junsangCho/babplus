@@ -6,8 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.babplus.common.entity.BaseTimeEntity;
-import org.example.babplus.payment.entity.Payment;
-import org.example.babplus.user.entity.User;
+import org.example.babplus.payment.domain.Payment;
+import org.example.babplus.user.domain.User;
 import org.hibernate.annotations.DynamicInsert;
 
 @Entity
